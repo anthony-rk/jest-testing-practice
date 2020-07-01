@@ -1,3 +1,4 @@
+// function to capitalize a string
 const capitalizeString = (str) => {
     let firstLetter = str[0].toUpperCase();
     let restOfString = str.slice(1, str.length);
@@ -7,6 +8,7 @@ const capitalizeString = (str) => {
     return result;
 };
 
+// Function to reverse a string
 const reverseString = (str) => {
     let strArray = [];
     let revString = '';
@@ -21,6 +23,7 @@ const reverseString = (str) => {
     return revString;
 };
 
+// Basic calculator object
 const calculator = {
     add: function(a, b) { return a + b; },
     subtract: function(a, b) { return a - b; },
@@ -28,6 +31,7 @@ const calculator = {
     multiply: function(a, b) { return a * b; }
 };
 
+// Caesar cypher function
 const caesarEncryption = (phrase, offset) => {
     var encMsg = "";
 
@@ -50,9 +54,44 @@ const caesarEncryption = (phrase, offset) => {
     return encMsg;
 };
 
+// Helper functions for arrayAnalyze()
+const findMin = (arr) => {
+    let res = arr[0]; 
+    for (let i = 1; i < arr.length; i++) {
+        if (res > arr[i]) { res = arr[i] }
+    }
+    return res;
+};
+
+const findMax = (arr) => {
+    let res = arr[0]; 
+    for (let i = 1; i < arr.length; i++) {
+        if (res < arr[i]) { res = arr[i] }
+    }
+    return res;
+};
+
+// Array Analysis
+const arrayAnalyze = (arr) => {
+    const objAnalysis = {};
+
+    objAnalysis.average = (arr.reduce((a, b) => {
+        return a + b;
+    }, 0)) / arr.length;
+
+    objAnalysis.min = findMin(arr);
+
+    objAnalysis.max = findMax(arr);
+    
+    objAnalysis.length = arr.length;
+
+    return objAnalysis;
+};
+
 export {   
     capitalizeString,
     reverseString,
     calculator,
-    caesarEncryption
+    caesarEncryption,
+    arrayAnalyze
 }
