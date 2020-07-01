@@ -1,0 +1,16 @@
+{
+  "name": "unit_testing_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test100.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "jest": "^26.1.0"
+  }
+}
